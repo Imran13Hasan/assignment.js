@@ -1,14 +1,20 @@
 // https://github.com/Imran13Hasan/assignment.js
 
+
 //Kilometer to Meter
 function kilometerToMeter(num) {
     var meter = 0;
 
-    meter = num * 1000;
-    return meter;
+    if (num <= 0) {
+        console.log("Insert positive number")
+    } else {
+        meter = num * 1000;
+        return meter;
+    }
+
 }
-var result = kilometerToMeter(5);
-// console.log(result);
+var result = kilometerToMeter(15);
+console.log(result);
 
 
 //Budget Calculator
@@ -24,14 +30,14 @@ function budgetCalculator(num1, num2, num3) {
     return total;
 }
 var totalCost = budgetCalculator(2, 3, 1);
-// console.log(totalCost);
+console.log(totalCost);
 
 
 //Hotel Cost
 function hotelCost(day) {
     var cost = 0;
 
-    if (day == 0) {
+    if (day <= 0) {
         console.log("Please input a positive number")
     } else if (day <= 10) {
         cost = day * 100;
@@ -49,22 +55,23 @@ function hotelCost(day) {
     }
     return cost;
 }
-var totalCost = hotelCost(21);
-// console.log(totalCost);
+var totalCost = hotelCost(20);
+console.log(totalCost);
 
 
 //Mega Friend
-    var arr = ["Imran", "Mahmudul", "Kamal", "Ahnaf", "Mahabubur"];
-    var largestName = arr[0];
-    
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        if(element.length > largestName){
-            largestName = element;
-        }
-        console.log(largestName)
-    }
+function megaFriend(arr) {
+    var longestName = "";
 
-// var array = ["Imran", "Mahmudul", "Hasan", "Kamal", "Ahnaf"];
-// var result = megaFriend(arr);
-// console.log(result)
+    for (let i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        if (longestName.length < element.length) {
+            longestName = element;
+        }
+    }
+    return longestName;
+}
+var friends = ["Imran", "Mahmudul Hasan Imran", "Hasan", "Kamal Hasan", "Ahnaf"];
+var result = megaFriend(friends);
+console.log(result)
+
